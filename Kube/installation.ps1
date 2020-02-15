@@ -113,7 +113,6 @@ $IP='<external ip from above command>'
 $DNSNAME='sufian'
 $PUBLICIPID=$(az network public-ip list --query "[?ipAddress!=null]|[?contains(ipAddress, '$IP')].[id]" --output tsv)
 #ASSIGN DNS
-az network public-ip update --ids $PUBLICIPID --dns-name $DNSNAME
 
 #INSTALL AZURE SAMPLES
 helm repo add azure-samples https://azure-samples.github.io/helm-charts/
